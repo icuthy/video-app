@@ -1,14 +1,9 @@
 import React from 'react';
 
-class VideoItem extends React.Component {
-    state = {}
-    render() {
-        return (
-            <div>
-                'VideoItem'
-            </div>
-        )
-    }
-}
+const VideoItem = (props) => {
+    return (
+        <div>I'm a VideoItem</div>
+    )
+};
 
 export default VideoItem;
