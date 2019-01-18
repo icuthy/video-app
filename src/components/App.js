@@ -18,8 +18,8 @@ class App extends React.Component {
         this.setState({ videos: response.data.items });
     };
 
-    onVideoSelect = (video) => {
-        console.log('from the App!', video)
+    onVideoSelect = async (video) => {
+        this.setState({ selectedVideo: video });
     };
 
     render() {
@@ -27,7 +27,7 @@ class App extends React.Component {
             <Fragment>
                 <div className="ui container">
                     <SearchBar onFormSubmit={this.onTermSubmit} />
-                    {/* <VideoDetail selectedVideo={this.state.selectedVideo} /> */}
+                    <VideoDetail video={this.state.selectedVideo} />
                     <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos} />
                 </div>
             </Fragment>

@@ -1,14 +1,10 @@
 import React from 'react';
 
-class VideoDetail extends React.Component {
-    state = {}
-    render() {
-        return (
-            <div>
-                'VideoDetail'
-            </div>
-        )
+const VideoDetail = ({ video }) => {
+    if (!video) {
+        return <div>loading ...</div>
     }
+    return <div>{video.snippet.title}</div>
 }
 
 export default VideoDetail;
