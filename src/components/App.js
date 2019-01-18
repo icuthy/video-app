@@ -24,9 +24,9 @@ class App extends React.Component {
             <Fragment>
                 <div className="ui container">
                     <SearchBar onFormSubmit={this.onTermSubmit} />
+                    {/* <VideoDetail /> */}
+                    <VideoList videos={this.state.videos} />
                 </div>
-                <VideoDetail />
-                <VideoList videos={this.state.videos} />
             </Fragment>
         )
     }
