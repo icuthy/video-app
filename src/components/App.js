@@ -9,13 +9,21 @@ class App extends React.Component {
 
     state = { videos: [], selectedVideo: null }
 
+    // to avoid blank video area, create default video when App component first rendered to screen
+    componentDidMount() {
+        this.onTermSubmit('fun');
+    }
+
     onTermSubmit = async (term) => {
         const response = await youtube.get('/search', {
             params: {
                 q: term
             }
         });
-        this.setState({ videos: response.data.items });
+        this.setState({
+            videos: response.data.items,
+            selectedVideo: response.data.items[0] //default to showing first video if none selected from list
+        });
     };
 
     onVideoSelect = async (video) => {
